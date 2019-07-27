@@ -1,0 +1,92 @@
+#+STARTUP: showeverything
+
+#+TITLE: Emacs for Vimmers
+
+This is meant to be a minimal, somewhat opinionated Emacs configuration
+intended to for Vim users who prefer to build their own init file instead
+of more heavy weight solutions.
+
+* Motivation
+
+  This is the configuration I wish I'd had starting out.
+
+  While there are comprehensive Emacs frameworks,
+  people more comfortable maintaining their own configuration
+  may prefer to start of with something smaller they can extend as needed.
+
+  In this case it can be hard to know where to start.
+
+* Approach
+
+  Since Vim is quite minimal by default,
+  this aims to provide a setup roughly matching what a developer using Vim might be familiar with.
+
+  While ~evil-mode~ on it's own gives most of Vim's functionality to Emacs,
+  there are various additional packages needed for features such as leader-key and incrementing numbers.
+
+  - Minimal: /Avoiding complexity in the configuration where possible./
+  - No faffing about: /Packages install on startup./
+  - Documented: /Each entry in needs to justify it's existence./
+
+* Installation
+
+  Copy ~.emacs.d~ to your home directory,  eg:
+
+  #+BEGIN_SRC sh
+  cp -R ~/.emacs.d ~/
+  #+END_SRC
+
+* Introduction
+
+  While mostly you can use this as Vim clone, there are differences to be aware of.
+
+  - Pressing ~Alt-X~ (often written as ~M-x~)
+    gives you access to many commands.
+  - Pressing ~Ctrl-Z~ toggles Vim emulation
+    (if you ever want to, or press this by accident).
+  - Packages can be upgraded by pressing:
+    ~M-X~, then typing ~package-utils-upgrade-all~.
+
+** Extra Functionality
+
+   Some popular packages have been enabled which don't have standardized ways of access for Vim or Emacs.
+
+   These have been assigned to the leader key, feel free to change them.
+
+   - ~Space, K~: Interactive file-name search.
+   - ~Space, F~: Interactive file-content search (for git repositories).
+   - ~Space, S~: Interactive current-buffer content search.
+   - ~Space, B~: Interactive buffer switching.
+
+* Packages
+
+  These packages are used:
+
+  - ~company~: /Auto-complete./
+  - ~counsel~: /Search./
+  - ~evil-leader~: /Additional Vim functionality./
+  - ~evil-numbers~: /Additional Vim functionality./
+  - ~evil-surround~: /Additional Vim functionality./
+  - ~evil~: /Vim functionality./
+  - ~find-file-in-project~: /Project level file navigation./
+  - ~git-gutter~ /Shows changes in the gutter./
+  - ~highlight-numbers~: /Support for highlighting numbers./
+  - ~inkpot-theme~: /Theme ported from Vim./
+  - ~ivy~: /Interactive completion./
+  - ~swiper~: /Interactive current-buffer search./
+  - ~which-key~: /Shows available key shortcuts (for leader key)./
+
+* What Next
+
+  Functionality not covered here which you might want add yourself.
+
+  - A file side-bar.
+  - A more advanced mode-line.
+  - File format packages depending on your usage.
+
+  These have intentionally been omitted to keep this fairly minimal,
+  and avoid too many opinionated decisions about which packages you'd like to use.
+
+* Feedback Welcome
+
+  If you have suggestions or corrections, feel free to submit a PR.
