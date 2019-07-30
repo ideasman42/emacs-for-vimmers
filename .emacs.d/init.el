@@ -206,6 +206,23 @@
   :config
   (load-theme 'inkpot t))
 
+;; Leader key support. Why?
+;; .. this is part of Vim, but not part of evil-mode, use a package.
+(use-package evil-leader
+  :demand t
+  :config
+  (global-evil-leader-mode)
+  (evil-leader/set-leader "<SPC>")
+  ;; EXAMPLE:
+  ;; Interactive file name search.
+  (evil-leader/set-key "k" 'find-file-in-project)
+  ;; Interactive file content search (git).
+  (evil-leader/set-key "f" 'counsel-git-grep)
+  ;; Interactive current-file search.
+  (evil-leader/set-key "s" 'swiper)
+  ;; Interactive open-buffer switch.
+  (evil-leader/set-key "b" 'counsel-switch-buffer))
+
 ;; Main Vim emulation package. Why?
 ;; .. without this, you won't have Vim key bindings or modes.
 (use-package evil
@@ -229,23 +246,6 @@
   :config
   ;; Initialize.
   (global-evil-surround-mode 1))
-
-;; Leader key support. Why?
-;; .. this is part of Vim, but not part of evil-mode, use a package.
-(use-package evil-leader
-  :demand t
-  :config
-  (global-evil-leader-mode)
-  (evil-leader/set-leader "<SPC>")
-  ;; EXAMPLE:
-  ;; Interactive file name search.
-  (evil-leader/set-key "k" 'find-file-in-project)
-  ;; Interactive file content search (git).
-  (evil-leader/set-key "f" 'counsel-git-grep)
-  ;; Interactive current-file search.
-  (evil-leader/set-key "s" 'swiper)
-  ;; Interactive open-buffer switch.
-  (evil-leader/set-key "b" 'counsel-switch-buffer))
 
 ;; Prompt for available keys after some delay. Why?
 ;; .. useful to see available keys after some delay, especially for evil-leader key.
