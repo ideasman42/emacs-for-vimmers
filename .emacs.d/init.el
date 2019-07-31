@@ -18,8 +18,8 @@
 (setq visible-bell 1)
 
 ;; Window Title:
-;; Include the buffer name & modified status since they're both useful information.
-;; Without this the title doesn't contain useful info.
+;; Include the buffer name & modified status. Why?
+;; .. the buffer name helps to differentiate windows when selecting from a task list.
 (setq-default frame-title-format "%b %& emacs")
 
 ;; ----------------------------------------------------------------------------
@@ -48,23 +48,22 @@
 (setq savehist-additional-variables '(register-alist))
 
 ;; Don't use file backups. Why?
-;; It adds cruft on the file-system which gets annoying.
+;; .. it adds cruft on the file-system which gets annoying.
 (setq backup-inhibited t)
 (setq auto-save-default nil)
 
-;; Don't say anything on mode-line mouse-over
-(setq mode-line-default-help-echo nil)
-
 ;; Show empty lines. Why?
-;; Without this you can't tell if there are blank lines at the end of the file.
+;; .. without this you can't tell if there are blank lines at the end of the file.
 (setq-default indicate-empty-lines t)
 
-;; Keep cursors and highlights in current window only
+;; Keep cursors and highlights in current window only. Why?
+;; .. it's not especially useful to show these in inactive windows.
 (setq cursor-in-non-selected-windows nil)
-;; Don't highlight inactive windows.
+;; Don't highlight inactive windows. Why?
+;; .. TODO.
 (setq highlight-nonselected-windows nil)
 ;; Disable bidirectional text support. Why?
-;; .. slight performance bonus.
+;; .. slight performance improvement.
 (setq bidi-display-reordering nil)
 
 ;; No startup screen. Why?
@@ -352,7 +351,8 @@
 (setq show-paren-highlight-openparen t)
 (setq show-paren-when-point-inside-paren t)
 
-;; disable word-wrap
+;; Disable word-wrap. Why?
+;; .. confusing for reading structured text, where white-space can be significant.
 (set-default 'truncate-lines t)
 
 ;; ------------
@@ -409,10 +409,7 @@
    (setq-local evil-shift-width 4)
    (setq-local indent-tabs-mode nil)
 
-   (setq-local ffip-patterns '("*.py"))
-
-   ;; don't show whitespace in Python mode (only trailing long lines).
-   (setq-local local-cfg/use-show-whitespace nil)))
+   (setq-local ffip-patterns '("*.py"))))
 
 ;; -----
 ;; Shell
@@ -475,6 +472,9 @@
 ;; ----------------------------------------------------------------------------
 ;; Custom Variables
 ;; ################
+
+;; Store custom variables in an external file. Why?
+;; .. it means this file can be kept in version control without noise from custom variables.
 
 (setq custom-file "~/.emacs.d/custom.el")
 (load custom-file 'noerror)
