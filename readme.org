@@ -51,12 +51,18 @@ of more heavy weight solutions.
 
    Some popular packages have been enabled which don't have standardized ways of access for Vim or Emacs.
 
-   These have been assigned to the leader key, feel free to change them.
+   - ~Ctrl-N~: Simple auto-complete based on words in current buffer).
+   - ~Ctrl-Space~: Context sensitive auto-complete (using ~company-complete~).
+   - ~Ctrl-Plus/Minus~: Zoom in/out.
 
-   - ~Space, K~: Interactive file-name search.
-   - ~Space, F~: Interactive file-content search (for git repositories).
-   - ~Space, S~: Interactive current-buffer content search.
-   - ~Space, B~: Interactive buffer switching.
+*** Leader Keys
+
+    These have been assigned to the leader key, feel free to change them.
+
+    - ~Space, K~: Interactive file-name search.
+    - ~Space, F~: Interactive file-content search (for git repositories).
+    - ~Space, S~: Interactive current-buffer content search.
+    - ~Space, B~: Interactive buffer switching.
 
 * Packages
 
@@ -64,6 +70,7 @@ of more heavy weight solutions.
 
   - ~company~: /Auto-complete./
   - ~counsel~: /Search./
+  - ~default-text-scale~: /Scale all text./
   - ~evil-leader~: /Additional Vim functionality./
   - ~evil-numbers~: /Additional Vim functionality./
   - ~evil-surround~: /Additional Vim functionality./

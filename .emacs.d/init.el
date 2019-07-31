@@ -313,6 +313,11 @@
 (use-package counsel
   :commands (counsel-git-grep counsel-switch-buffer))
 
+;; Find file in project. Why?
+;; .. interactively narrowing down other files in the project is very useful.
+(use-package find-file-in-project
+  :commands (find-file-in-project))
+
 ;; Use git-gutter. Why?
 ;; .. shows lines you have modified from the last commit.
 (use-package git-gutter
@@ -325,10 +330,14 @@
 (use-package highlight-numbers
   :hook ((prog-mode) . highlight-numbers-mode))
 
-;; Find file in project. Why?
-;; .. interactively narrowing down other files in the project is very useful.
-(use-package find-file-in-project
-  :commands (find-file-in-project))
+;; Scale all text. Why?
+;; .. it's useful sometimes to globally zoom in all text.
+(use-package default-text-scale
+  :demand t
+  :init
+  (setq default-text-scale-mode-map (make-sparse-keymap))
+  :config
+  (default-text-scale-mode))
 
 ;; ---------------
 ;; Display Options
@@ -447,6 +456,22 @@
 ;; ----------------------------------------------------------------------------
 ;; Keymap
 ;; ######
+
+;; -----------
+;; Global Keys
+;; ===========
+
+;; Control +/- or mouse-wheel to zoom.
+(global-set-key (kbd "C-=") 'default-text-scale-increase)
+(global-set-key (kbd "C--") 'default-text-scale-decrease)
+(global-set-key (kbd "C-0") 'default-text-scale-reset)
+
+(global-set-key (kbd "<C-mouse-4>") 'default-text-scale-increase)
+(global-set-key (kbd "<C-mouse-5>") 'default-text-scale-decrease)
+
+;; --------------
+;; Evil Mode Keys
+;; ==============
 
 ;; Use secondary selection in insert mode, Why?
 ;; .. this is handy for quick middle mouse copy/paste while in insert mode.
