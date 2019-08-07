@@ -288,9 +288,15 @@
   :commands (company-complete-common company-dabbrev)
   :config
   (global-company-mode)
+
+  ;; Increase maximum number of items to show in auto-completion. Why?
+  ;; Seeing more at once gives you a better overview of you'r options.
   (setq company-tooltip-limit 40)
-  ;; Case sensitive completion of words in the current buffer.
+
+  ;; Don't make abbreviations lowercase or ignore case. Why?
+  ;; Many languages are case sensitive, so changing case isn't helpful.
   (setq company-dabbrev-downcase nil)
+  (setq company-dabbrev-ignore-case nil)
 
   ;; Keymap: hold Ctrl for Vim motion. Why?
   ;; .. we're already holding Ctrl, allow navigation at the same time.
