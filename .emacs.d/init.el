@@ -156,6 +156,8 @@
 (setq-default case-fold-search nil)
 ;; Case sensitive abbreviations.
 (setq dabbrev-case-fold-search nil)
+;; Case sensitive (impacts counsel case-sensitive file search).
+(setq-default search-upper-case nil)
 
 
 ;; -----------
