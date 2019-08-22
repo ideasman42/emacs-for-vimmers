@@ -314,7 +314,12 @@
 ;; Use swiper for interactive buffer search. Why?
 ;; .. quickly search the buffer if useful.
 (use-package swiper
-  :commands (swiper))
+  :commands (swiper)
+  :config
+
+  ;; Go to the start of the match instead of the end. Why?
+  ;; .. allows us to operate on the term just jumped to (look up reference for e.g.)
+  (setq swiper-goto-start-of-match t))
 
 ;; Use counsel for project wide searches. Why?
 ;; .. interactive project wide search is incredibly useful.
