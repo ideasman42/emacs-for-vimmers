@@ -146,6 +146,13 @@
 ;; Editing Options
 ;; ###############
 
+;; Undo
+;; ====
+
+;; Don't group undo steps. Why?
+;; Without this is groups actions into a fixed number of steps.
+(fset 'undo-auto-amalgamate 'ignore)
+
 ;; Case Sensitivity
 ;; ================
 
