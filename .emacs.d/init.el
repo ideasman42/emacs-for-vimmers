@@ -10,8 +10,7 @@
 
 ;; Disable startup message. Why?
 ;; .. less noise is better.
-(defun display-startup-echo-area-message ()
-  (message ""))
+(defun display-startup-echo-area-message () (message ""))
 
 ;; Visual bell. Why?
 ;; Audible beeps are annoying.
@@ -197,8 +196,7 @@
   (package-install 'use-package))
 
 ;; This is only needed once, near the top of the file
-(eval-when-compile
-  (require 'use-package))
+(eval-when-compile (require 'use-package))
 
 ;; Download automatically. Why?
 ;; .. convenience, so on first start all packages are installed.
@@ -211,8 +209,7 @@
 ;; .. personal preference.
 (use-package inkpot-theme
   :demand t
-  :config
-  (load-theme 'inkpot t))
+  :config (load-theme 'inkpot t))
 
 ;; Leader key support. Why?
 ;; .. this is part of Vim, but not part of evil-mode, use a package.
@@ -342,8 +339,7 @@
 ;; .. shows lines you have modified from the last commit.
 (use-package git-gutter
   :demand t
-  :config
-  (global-git-gutter-mode))
+  :config (global-git-gutter-mode))
 
 ;; Highlights numbers. Why?
 ;; .. emacs doesn't do this by default, use a package.
@@ -354,10 +350,8 @@
 ;; .. it's useful sometimes to globally zoom in all text.
 (use-package default-text-scale
   :demand t
-  :init
-  (setq default-text-scale-mode-map (make-sparse-keymap))
-  :config
-  (default-text-scale-mode))
+  :init (setq default-text-scale-mode-map (make-sparse-keymap))
+  :config (default-text-scale-mode))
 
 ;; ---------------
 ;; Display Options
@@ -389,89 +383,84 @@
 ;; ============
 
 ;; Options for generic modes.
-(add-hook
- 'after-change-major-mode-hook
- (lambda ()
-   (when (derived-mode-p 'text-mode)
-     (flyspell-mode))
-   (when (derived-mode-p 'prog-mode)
-     (flyspell-prog-mode))))
+(add-hook 'after-change-major-mode-hook
+  (lambda ()
+    (when (derived-mode-p 'text-mode)
+      (flyspell-mode))
+    (when (derived-mode-p 'prog-mode)
+      (flyspell-prog-mode))))
 
 ;; ------
 ;; Markup
 ;; ------
 
-(add-hook
- 'org-mode-hook
- (lambda ()
-   (setq-local fill-column 120)
-   (setq-local tab-width 2)
-   (setq-local evil-shift-width 2)
-   (setq-local indent-tabs-mode nil)
+(add-hook 'org-mode-hook
+  (lambda ()
+    (setq-local fill-column 120)
+    (setq-local tab-width 2)
+    (setq-local evil-shift-width 2)
+    (setq-local indent-tabs-mode nil)
 
-   (setq-local ffip-patterns '("*.org"))))
+    (setq-local ffip-patterns '("*.org"))))
 
 ;; ---------
 ;; Scripting
 ;; ---------
 
-(add-hook
- 'emacs-lisp-mode-hook
- (lambda ()
-   (setq-local fill-column 120)
-   (setq-local tab-width 2)
-   (setq-local evil-shift-width 2)
-   (setq-local indent-tabs-mode nil)
+(add-hook 'emacs-lisp-mode-hook
+  (lambda ()
+    (setq-local fill-column 120)
+    (setq-local tab-width 2)
+    (setq-local evil-shift-width 2)
+    (setq-local indent-tabs-mode nil)
 
-   (setq-local ffip-patterns '("*.el"))
+    (setq-local ffip-patterns '("*.el"))
 
-   ;; Don't delimit on dashes or underscores. Why?
-   ;; .. makes seaching for variable names inconvenient.
-   (modify-syntax-entry ?- "w")
-   (modify-syntax-entry ?_ "w")))
+    ;; Don't delimit on dashes or underscores. Why?
+    ;; .. makes seaching for variable names inconvenient.
+    (modify-syntax-entry ?- "w")
+    (modify-syntax-entry ?_ "w")))
 
-(add-hook
- 'python-mode-hook
- (lambda ()
-   (setq-local fill-column 80)
-   (setq-local tab-width 4)
-   (setq-local evil-shift-width 4)
-   (setq-local indent-tabs-mode nil)
+(add-hook 'python-mode-hook
+  (lambda ()
+    (setq-local fill-column 80)
+    (setq-local tab-width 4)
+    (setq-local evil-shift-width 4)
+    (setq-local indent-tabs-mode nil)
 
-   (setq-local ffip-patterns '("*.py"))))
+    (setq-local ffip-patterns '("*.py"))))
 
 ;; -----
 ;; Shell
 ;; -----
 
-(add-hook
- 'sh-mode-hook
- (lambda ()
-   (setq-local fill-column 120)
-   (setq-local tab-width 4)
-   (setq-local evil-shift-width 4)
-   (setq-local indent-tabs-mode nil)
+(add-hook 'sh-mode-hook
+  (lambda ()
+    (setq-local fill-column 120)
+    (setq-local tab-width 4)
+    (setq-local evil-shift-width 4)
+    (setq-local indent-tabs-mode nil)
 
-   (setq-local ffip-patterns '("*.sh"))))
+    (setq-local ffip-patterns '("*.sh"))))
 
 ;; ---------------
 ;; Other Languages
 ;; ---------------
 
-(add-hook
- 'c-mode-hook
- (lambda ()
-   (setq-local fill-column 120)
-   (setq-local c-basic-offset 4)
-   (setq-local tab-width 4)
-   (setq-local evil-shift-width 4)
-   (setq-local indent-tabs-mode nil)
+(add-hook 'c-mode-hook
+  (lambda ()
+    (setq-local fill-column 120)
+    (setq-local c-basic-offset 4)
+    (setq-local tab-width 4)
+    (setq-local evil-shift-width 4)
+    (setq-local indent-tabs-mode nil)
 
-   (setq-local ffip-patterns '("*.c" "*.cc" "*.cpp" "*.cxx" "*.h" "*.hh" "*.hpp" "*.hxx" "*.inl"))
+    (setq-local ffip-patterns
+      '("*.c" "*.cc" "*.cpp" "*.cxx" "*.h" "*.hh" "*.hpp" "*.hxx" "*.inl"))
 
-   ;; Don't delimit on '_'. Why?
-   ;; .. makes seaching for variable names inconvenient.
-   (modify-syntax-entry ?_ "w")))
+    ;; Don't delimit on '_'. Why?
+    ;; .. makes seaching for variable names inconvenient.
+    (modify-syntax-entry ?_ "w")))
 
 ;; ----------------------------------------------------------------------------
 ;; Keymap
@@ -500,7 +489,8 @@
 (define-key evil-insert-state-map (kbd "<mouse-1>") 'mouse-start-secondary)
 ;; De-select after copy, allows quick select-copy-paste.
 (define-key evil-insert-state-map (kbd "<mouse-2>")
-  (lambda (click) (interactive "*p")
+  (lambda (click)
+    (interactive "*p")
     (when (overlay-start mouse-secondary-overlay)
       (mouse-yank-secondary click)
       (delete-overlay mouse-secondary-overlay))))
