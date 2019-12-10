@@ -152,6 +152,17 @@
 ;; Without this is groups actions into a fixed number of steps.
 (fset 'undo-auto-amalgamate 'ignore)
 
+;; Increase undo limits. Why?
+;; Being able to go very far back in history can be useful at times.
+;; Limit of 64mb.
+(setq undo-limit 6710886400)
+;; Strong limit of 1.5x (96mb)
+(setq undo-strong-limit 100663296)
+;; Outer limit of 10x (960mb).
+;; Note that the default is x100), but this seems too high.
+(setq undo-outer-limit 1006632960)
+
+
 ;; Case Sensitivity
 ;; ================
 
