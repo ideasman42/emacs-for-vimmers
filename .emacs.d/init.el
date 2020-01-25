@@ -525,5 +525,5 @@
 ;; Store custom variables in an external file. Why?
 ;; .. it means this file can be kept in version control without noise from custom variables.
 
-(setq custom-file "~/.emacs.d/custom.el")
+(setq custom-file (concat user-emacs-directory "custom.el"))
 (load custom-file 'noerror)
