@@ -348,11 +348,11 @@
 (use-package find-file-in-project
   :commands (find-file-in-project))
 
-;; Use git-gutter. Why?
+;; Use diff-hl. Why?
 ;; .. shows lines you have modified from the last commit.
-(use-package git-gutter
+(use-package diff-hl
   :demand t
-  :config (global-git-gutter-mode))
+  :config (global-diff-hl-mode))
 
 ;; Highlights numbers. Why?
 ;; .. emacs doesn't do this by default, use a package.
