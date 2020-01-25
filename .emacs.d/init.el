@@ -134,11 +134,12 @@
 ;; .. integrates with the system clipboard for convenience.
 (setq select-enable-clipboard t)
 
-;; Treat clipboard input as UTF-8 string first; compound text next, etc.
+;; Treat clipboard input as UTF-8 string first; compound text next, etc. Why?
+;; .. Match default encoding which is UTF-8 as well.
 (setq x-select-request-type '(UTF8_STRING COMPOUND_TEXT TEXT STRING))
 
 ;; Paste at text-cursor instead of mouse-cursor location. Why?
-;; .. allow selecting to paste while in insert-mode, instead of moving the text cursor.
+;; .. allow to quickly select & paste while in insert-mode, instead of moving the text cursor.
 (setq mouse-yank-at-point t)
 
 ;; ----------------------------------------------------------------------------
@@ -149,11 +150,11 @@
 ;; ====
 
 ;; Don't group undo steps. Why?
-;; Without this is groups actions into a fixed number of steps.
+;; .. without this is groups actions into a fixed number of steps which feels unpredictable.
 (fset 'undo-auto-amalgamate 'ignore)
 
 ;; Increase undo limits. Why?
-;; Being able to go very far back in history can be useful at times.
+;; .. ability to go far back in history can be useful, modern systems have sufficient memory.
 ;; Limit of 64mb.
 (setq undo-limit 6710886400)
 ;; Strong limit of 1.5x (96mb)
@@ -167,7 +168,7 @@
 ;; ================
 
 ;; Be case sensitive. Why?
-;; Results are less ambiguous, although this is personal preference too.
+;; .. less ambiguous results, most programming languages are case sensitive.
 
 ;; Case sensitive search.
 (setq-default case-fold-search nil)
@@ -201,7 +202,8 @@
 
 (package-initialize)
 
-;; Auto-install use-package.
+;; Auto-install use-package. Why:
+;; .. this is a defacto-standard package manager, useful to isolate each package's configuration.
 (unless (package-installed-p 'use-package)
   (package-refresh-contents)
   (package-install 'use-package))
@@ -223,7 +225,7 @@
   :config (load-theme 'inkpot t))
 
 ;; Leader key support. Why?
-;; .. this is part of Vim, but not part of evil-mode, use a package.
+;; .. this is part of Vim, but not part of evil, use a package.
 (use-package evil-leader
   :demand t
   :config
@@ -300,7 +302,7 @@
   (define-key ivy-minibuffer-map (kbd "C-w") 'evil-window-map))
 
 ;; Use for auto-complete. Why?
-;; .. saves typing.
+;; .. saves typing, allows multiple back-ends based on the current language/mode.
 (use-package company
   :commands (company-complete-common company-dabbrev)
   :config
@@ -481,7 +483,8 @@
 ;; Global Keys
 ;; ===========
 
-;; Control +/- or mouse-wheel to zoom.
+;; Control +/- or mouse-wheel to zoom. Why?
+;; .. this is a common shortcut for web-browsers.
 (global-set-key (kbd "C-=") 'default-text-scale-increase)
 (global-set-key (kbd "C--") 'default-text-scale-decrease)
 (global-set-key (kbd "C-0") 'default-text-scale-reset)
