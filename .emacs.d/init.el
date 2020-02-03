@@ -1,3 +1,5 @@
+;;; init.el --- Init file -*- lexical-binding: t -*-
+
 ;; ----------------------------------------------------------------------------
 ;; Application Options
 ;; ###################
@@ -278,7 +280,7 @@
 
   ;; Always show half the window height. Why?
   ;; Useful when searching through large lists of content.
-  (setq ivy-height-alist `((t . ,(lambda (caller) (/ (frame-height) 2)))))
+  (setq ivy-height-alist `((t . ,(lambda (_caller) (/ (frame-height) 2)))))
   (setq ivy-display-style 'fancy)
 
   ;; Vim style keys in ivy (holding Ctrl).
