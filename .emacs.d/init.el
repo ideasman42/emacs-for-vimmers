@@ -77,10 +77,6 @@
 ;; .. it can overlap characters we want to see.
 (setq make-pointer-invisible t)
 
-;; Don't pause display on input. Why?
-;; .. it can make display lag, especially when holding a key.
-(setq redisplay-dont-pause t)
-
 ;; Don't put two spaces after full-stop. Why?
 ;; .. one space after a full-stop is sufficient in most documentation & comments.
 (setq sentence-end-double-space nil)
