@@ -76,8 +76,8 @@ of more heavy weight solutions.
   - ~evil-surround~: /Additional Vim functionality./
   - ~evil~: /Vim functionality./
   - ~find-file-in-project~: /Project level file navigation./
-  - ~git-gutter~ /Shows changes in the gutter./
   - ~highlight-numbers~: /Support for highlighting numbers./
+  - ~hl-diff~ /Shows changes in the gutter./
   - ~inkpot-theme~: /Theme ported from Vim./
   - ~ivy~: /Interactive completion./
   - ~swiper~: /Interactive current-buffer search./
