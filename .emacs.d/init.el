@@ -75,7 +75,7 @@
 ;; .. buffer switching gets in the way, you can manually switch between them.
 (setq inhibit-startup-buffer-menu t)
 
-;; Hide cursor while typing. Why?
+;; Hide mouse cursor while typing. Why?
 ;; .. it can overlap characters we want to see.
 (setq make-pointer-invisible t)
 
@@ -307,7 +307,7 @@
   (global-company-mode)
 
   ;; Increase maximum number of items to show in auto-completion. Why?
-  ;; Seeing more at once gives you a better overview of you'r options.
+  ;; Seeing more at once gives you a better overview of your options.
   (setq company-tooltip-limit 40)
 
   ;; Don't make abbreviations lowercase or ignore case. Why?
@@ -353,7 +353,7 @@
   :config (global-diff-hl-mode))
 
 ;; Highlights numbers. Why?
-;; .. emacs doesn't do this by default, use a package.
+;; .. Emacs doesn't do this by default, use a package.
 (use-package highlight-numbers
   :hook ((prog-mode) . highlight-numbers-mode))
 
@@ -470,7 +470,7 @@
       '("*.c" "*.cc" "*.cpp" "*.cxx" "*.h" "*.hh" "*.hpp" "*.hxx" "*.inl"))
 
     ;; Don't delimit on '_'. Why?
-    ;; .. makes seaching for variable names inconvenient.
+    ;; .. makes searching for variable names inconvenient.
     (modify-syntax-entry ?_ "w")))
 
 ;; ----------------------------------------------------------------------------
@@ -482,7 +482,7 @@
 ;; ===========
 
 ;; Control +/- or mouse-wheel to zoom. Why?
-;; .. this is a common shortcut for web-browsers.
+;; .. this is a common shortcut for web-browsers that doesn't conflict with anything else.
 (global-set-key (kbd "C-=") 'default-text-scale-increase)
 (global-set-key (kbd "C--") 'default-text-scale-decrease)
 (global-set-key (kbd "C-0") 'default-text-scale-reset)
