@@ -15,7 +15,7 @@
 (defun display-startup-echo-area-message () (message ""))
 
 ;; Visual bell. Why?
-;; Audible beeps are annoying.
+;; .. audible beeps are annoying.
 (setq visible-bell 1)
 
 ;; Window Title:
@@ -59,10 +59,10 @@
 
 ;; Keep cursors and highlights in current window only. Why?
 ;; .. it's not especially useful to show these in inactive windows.
-(setq cursor-in-non-selected-windows nil)
-;; Don't highlight inactive windows. Why?
-;; .. TODO.
-(setq highlight-nonselected-windows nil)
+(setq cursor-in-non-selected-windows 'hollow)
+;; Highlight inactive windows. Why?
+;; To keep the selection region when changing windows (when evil-mode is disabled).
+(setq highlight-nonselected-windows t)
 ;; Disable bidirectional text support. Why?
 ;; .. slight performance improvement.
 (setq bidi-display-reordering nil)
@@ -223,7 +223,7 @@
   :config (load-theme 'inkpot t))
 
 ;; Leader key support. Why?
-;; .. this is part of Vim, but not part of evil, use a package.
+;; .. this is part of Vim, but not part of evil-mode, use a package.
 (use-package evil-leader
   :demand t
   :config
