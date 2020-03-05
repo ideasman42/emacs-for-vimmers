@@ -77,7 +77,7 @@ of more heavy weight solutions.
   - ~evil~: /Vim functionality./
   - ~find-file-in-project~: /Project level file navigation./
   - ~highlight-numbers~: /Support for highlighting numbers./
-  - ~hl-diff~ /Shows changes in the gutter./
+  - ~diff-hl~ /Shows changes in the gutter./
   - ~inkpot-theme~: /Theme ported from Vim./
   - ~ivy~: /Interactive completion./
   - ~swiper~: /Interactive current-buffer search./
