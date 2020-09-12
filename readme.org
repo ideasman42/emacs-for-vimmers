@@ -71,7 +71,6 @@ of more heavy weight solutions.
   - ~company~: /Auto-complete./
   - ~counsel~: /Search./
   - ~default-text-scale~: /Scale all text./
-  - ~evil-leader~: /Additional Vim functionality./
   - ~evil-numbers~: /Additional Vim functionality./
   - ~evil-surround~: /Additional Vim functionality./
   - ~evil~: /Vim functionality./

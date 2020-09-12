@@ -222,23 +222,6 @@
   :demand t
   :config (load-theme 'inkpot t))
 
-;; Leader key support. Why?
-;; .. this is part of Vim, but not part of evil-mode, use a package.
-(use-package evil-leader
-  :demand t
-  :config
-  (global-evil-leader-mode)
-  (evil-leader/set-leader "<SPC>")
-  ;; EXAMPLE:
-  ;; Interactive file name search.
-  (evil-leader/set-key "k" 'find-file-in-project)
-  ;; Interactive file content search (git).
-  (evil-leader/set-key "f" 'counsel-git-grep)
-  ;; Interactive current-file search.
-  (evil-leader/set-key "s" 'swiper)
-  ;; Interactive open-buffer switch.
-  (evil-leader/set-key "b" 'counsel-switch-buffer))
-
 ;; Main Vim emulation package. Why?
 ;; .. without this, you won't have Vim key bindings or modes.
 (use-package evil
@@ -515,6 +498,24 @@
 (define-key evil-insert-state-map (kbd "C-n") 'company-dabbrev)
 ;; Comprehensive auto-complete.
 (define-key evil-insert-state-map (kbd "C-SPC") 'company-complete-common)
+
+
+;; ----------------
+;; Evil Leader Keys
+;; ================
+
+;; Example leader keys for useful functionality exposed by packages.
+(with-eval-after-load 'evil
+  (evil-set-leader '(normal) (kbd "<SPC>"))
+
+  ;; Interactive file name search.
+  (evil-define-key 'normal 'global (kbd "<leader>k") 'find-file-in-project)
+  ;; Interactive file content search (git).
+  (evil-define-key 'normal 'global (kbd "<leader>f") 'counsel-git-grep)
+  ;; Interactive current-file search.
+  (evil-define-key 'normal 'global (kbd "<leader>s") 'swiper)
+  ;; Interactive open-buffer switch.
+  (evil-define-key 'normal 'global (kbd "<leader>b") 'counsel-switch-buffer))
 
 ;; ----------------------------------------------------------------------------
 ;; Custom Variables
