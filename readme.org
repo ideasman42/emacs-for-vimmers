@@ -22,7 +22,7 @@ of more heavy weight solutions.
   this aims to provide a setup roughly matching what a developer using Vim might be familiar with.
 
   While ~evil-mode~ on it's own gives most of Vim's functionality to Emacs,
-  there are various additional packages needed for features such as leader-key and incrementing numbers.
+  there are various additional packages needed for features such as incrementing numbers.
 
   - Minimal: /Avoiding complexity in the configuration where possible./
   - No faffing about: /Packages install on startup./
