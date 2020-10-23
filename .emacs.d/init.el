@@ -61,14 +61,14 @@
 ;; .. it's not especially useful to show these in inactive windows.
 (setq cursor-in-non-selected-windows 'hollow)
 ;; Highlight inactive windows. Why?
-;; To keep the selection region when changing windows (when evil-mode is disabled).
+;; .. to keep the selection region when changing windows (when evil-mode is disabled).
 (setq highlight-nonselected-windows t)
 ;; Disable bidirectional text support. Why?
 ;; .. slight performance improvement.
 (setq bidi-display-reordering nil)
 
 ;; No startup screen. Why?
-;; .. No need to distract us with unnecessary info.
+;; .. no need to distract us with unnecessary info.
 (setq inhibit-startup-screen t)
 
 ;; Don't show buffer list on startup. Why?
@@ -92,7 +92,7 @@
 (setq scroll-margin 2)
 
 ;; Scroll back this many lines to being the cursor back on screen. Why?
-;; .. Default behavior is to re-center which is jarring. Clamp to the scroll margin instead.
+;; .. default behavior is to re-center which is jarring. Clamp to the scroll margin instead.
 (setq scroll-conservatively scroll-margin)
 
 ;; Keyboard scroll one line at a time. Why?
@@ -133,7 +133,7 @@
 (setq select-enable-clipboard t)
 
 ;; Treat clipboard input as UTF-8 string first; compound text next, etc. Why?
-;; .. Match default encoding which is UTF-8 as well.
+;; .. match default encoding which is UTF-8 as well.
 (setq x-select-request-type '(UTF8_STRING COMPOUND_TEXT TEXT STRING))
 
 ;; Paste at text-cursor instead of mouse-cursor location. Why?
@@ -262,7 +262,7 @@
   (ivy-mode)
 
   ;; Always show half the window height. Why?
-  ;; Useful when searching through large lists of content.
+  ;; .. useful when searching through large lists of content.
   (setq ivy-height-alist `((t . ,(lambda (_caller) (/ (frame-height) 2)))))
   (setq ivy-display-style 'fancy)
 
@@ -290,11 +290,11 @@
   (global-company-mode)
 
   ;; Increase maximum number of items to show in auto-completion. Why?
-  ;; Seeing more at once gives you a better overview of your options.
+  ;; .. seeing more at once gives you a better overview of your options.
   (setq company-tooltip-limit 40)
 
   ;; Don't make abbreviations lowercase or ignore case. Why?
-  ;; Many languages are case sensitive, so changing case isn't helpful.
+  ;; .. many languages are case sensitive, so changing case isn't helpful.
   (setq company-dabbrev-downcase nil)
   (setq company-dabbrev-ignore-case nil)
 
@@ -482,7 +482,8 @@
 (define-key evil-insert-state-map (kbd "<down-mouse-1>") 'mouse-drag-secondary)
 (define-key evil-insert-state-map (kbd "<drag-mouse-1>") 'mouse-drag-secondary)
 (define-key evil-insert-state-map (kbd "<mouse-1>") 'mouse-start-secondary)
-;; De-select after copy, allows quick select-copy-paste.
+;; De-select after copy, Why?
+;; .. allows quick select-copy-paste.
 (define-key evil-insert-state-map (kbd "<mouse-2>")
   (lambda (click)
     (interactive "*p")
