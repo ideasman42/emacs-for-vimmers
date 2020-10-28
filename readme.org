@@ -2,8 +2,8 @@
 
 #+TITLE: Emacs for Vimmers
 
-This is meant to be a minimal, somewhat opinionated Emacs configuration
-intended to for Vim users who prefer to build their own init file instead
+This is a minimal, somewhat opinionated Emacs configuration
+intended to for Vim users who prefer to build their own ~init.el~ file instead
 of more heavy weight solutions.
 
 * Motivation
