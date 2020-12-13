@@ -264,7 +264,7 @@
   (which-key-mode))
 
 ;; Ivy completion. Why?
-;; .. makes compleating various prompts for input much more friendly & interactive.
+;; .. makes completing various prompts for input much more friendly & interactive.
 (use-package ivy
   :demand t
   :config
@@ -275,7 +275,7 @@
   (setq ivy-height-alist `((t . ,(lambda (_caller) (/ (frame-height) 2)))))
   (setq ivy-display-style 'fancy)
 
-  ;; Vim style keys in ivy (holding Ctrl).
+  ;; Vim style keys in ivy (holding Control).
   (define-key ivy-minibuffer-map (kbd "C-j") 'next-line)
   (define-key ivy-minibuffer-map (kbd "C-k") 'previous-line)
 
@@ -307,8 +307,8 @@
   (setq company-dabbrev-downcase nil)
   (setq company-dabbrev-ignore-case nil)
 
-  ;; Keymap: hold Ctrl for Vim motion. Why?
-  ;; .. we're already holding Ctrl, allow navigation at the same time.
+  ;; Key-map: hold Control for Vim motion. Why?
+  ;; .. we're already holding Control, allow navigation at the same time.
   (define-key company-active-map (kbd "C-j") 'company-select-next-or-abort)
   (define-key company-active-map (kbd "C-k") 'company-select-previous-or-abort)
   (define-key company-active-map (kbd "C-l") 'company-complete-selection)
@@ -318,7 +318,7 @@
   (define-key company-search-map (kbd "C-j") 'company-select-next)
   (define-key company-search-map (kbd "C-k") 'company-select-previous))
 
-;; Use swiper for interactive buffer search. Why?
+;; Use `swiper' for interactive buffer search. Why?
 ;; .. quickly search the buffer if useful.
 (use-package swiper
   :commands (swiper)
@@ -338,7 +338,7 @@
 (use-package find-file-in-project
   :commands (find-file-in-project))
 
-;; Use diff-hl. Why?
+;; Use `diff-hl'. Why?
 ;; .. shows lines you have modified from the last commit.
 (use-package diff-hl
   :demand t
@@ -420,7 +420,7 @@
     (setq-local ffip-patterns '("*.el"))
 
     ;; Don't delimit on dashes or underscores. Why?
-    ;; .. makes seaching for variable names inconvenient.
+    ;; .. makes searching for variable names inconvenient.
     (modify-syntax-entry ?- "w")
     (modify-syntax-entry ?_ "w")))
 
@@ -466,8 +466,8 @@
     (modify-syntax-entry ?_ "w")))
 
 ;; ----------------------------------------------------------------------------
-;; Keymap
-;; ######
+;; Key-map
+;; #######
 
 ;; -----------
 ;; Global Keys
