@@ -379,7 +379,7 @@
 
 ;; Disable word-wrap. Why?
 ;; .. confusing for reading structured text, where white-space can be significant.
-(set-default 'truncate-lines t)
+(setq-default truncate-lines t)
 
 ;; ------------
 ;; File Formats
