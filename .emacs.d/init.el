@@ -226,6 +226,11 @@
 ;; .. without this, you won't have Vim key bindings or modes.
 (use-package evil
   :demand t
+  :init
+
+  ;; See `undo-fu' package.
+  (setq evil-undo-system 'undo-fu)
+
   :config
   ;; Initialize.
   (evil-mode)
@@ -233,6 +238,10 @@
   ;; For some reasons evils own search isn't default.
   (setq evil-search-module 'evil-search)
   (setq evil-ex-search-case 'sensitive))
+
+;; Use a thin wrapper for undo. Why?
+;; .. By default undo doesn't support redo as most users would expect from other software.
+(use-package undo-fu)
 
 ;; Use evil numbers to increment & decrement. Why?
 ;; .. evil-mode doesn't include this Vim functionality.
