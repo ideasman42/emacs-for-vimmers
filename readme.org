@@ -3,8 +3,7 @@
 #+TITLE: Emacs for Vimmers
 
 This is a minimal, somewhat opinionated Emacs configuration
-intended to for Vim users who prefer to build their own ~init.el~ file instead
-of more heavy weight solutions.
+intended to for Vim users who prefer to build their own ~init.el~ file instead of more heavy weight solutions.
 
 * Motivation
 
@@ -80,6 +79,7 @@ of more heavy weight solutions.
   - ~inkpot-theme~: /Theme ported from Vim./
   - ~ivy~: /Interactive completion./
   - ~swiper~: /Interactive current-buffer search./
+  - ~undo-fu~: /Provides typical undo/redo behavior, without loosing full non-linear undo history./
   - ~which-key~: /Shows available key shortcuts (for leader key)./
 
 * What Next
