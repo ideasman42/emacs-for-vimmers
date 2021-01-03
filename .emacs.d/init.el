@@ -18,8 +18,7 @@
 ;; .. audible beeps are annoying.
 (setq visible-bell 1)
 
-;; Window Title:
-;; Include the buffer name & modified status. Why?
+;; Window Title, include the buffer name & modified status. Why?
 ;; .. the buffer name helps to differentiate windows when selecting from a task list.
 (setq-default frame-title-format "%b %& emacs")
 
@@ -120,7 +119,7 @@
 (setq next-error-recenter (quote (4)))
 
 ;; Always redraw immediately when scrolling. Why?
-;; .. more responsive and doesn't hang.
+;; .. more responsive, it wont hang while handling keyboard input.
 (setq fast-but-imprecise-scrolling nil)
 (setq jit-lock-defer-time 0)
 
