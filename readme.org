@@ -44,7 +44,7 @@ intended to for Vim users who prefer to build their own ~init.el~ file instead o
   - Pressing ~Ctrl-Z~ toggles Vim emulation
     (if you ever want to, or press this by accident).
   - Packages can be upgraded by pressing:
-    ~M-X~, then typing ~package-utils-upgrade-all~.
+    ~M-x~, then typing ~package-utils-upgrade-all-and-recompile~.
 
 ** Extra Functionality
 
