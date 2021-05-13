@@ -70,7 +70,7 @@ intended to for Vim users who prefer to build their own ~init.el~ file instead o
   - ~company~: /Auto-complete./
   - ~counsel~: /Search./
   - ~default-text-scale~: /Scale all text./
-  - ~evil-numbers~: /Additional Vim functionality./
+  - ~evil-numbers~: /Additional Vim functionality to increment/decrement numbers./
   - ~evil-surround~: /Additional Vim functionality./
   - ~evil~: /Vim functionality./
   - ~find-file-in-project~: /Project level file navigation./
