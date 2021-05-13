@@ -199,7 +199,7 @@
 
 (package-initialize)
 
-;; Auto-install use-package. Why:
+;; Auto-install use-package. Why?
 ;; .. this is a defacto-standard package manager, useful to isolate each package's configuration.
 (unless (package-installed-p 'use-package)
   (package-refresh-contents)
@@ -220,6 +220,14 @@
 (use-package inkpot-theme
   :demand t
   :config (load-theme 'inkpot t))
+
+
+;; Highlight terms in code-comments such as TODO, FIXME, URL's & email. Why?
+;; .. these are common conventions in software that it's useful to highlight them.
+(use-package hl-prog-extra
+  :commands (hl-prog-extra-mode)
+  :init (add-hook 'prog-mode-hook #'hl-prog-extra-mode))
+
 
 ;; Main Vim emulation package. Why?
 ;; .. without this, you won't have Vim key bindings or modes.

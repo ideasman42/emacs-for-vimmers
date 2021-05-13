@@ -76,6 +76,7 @@ intended to for Vim users who prefer to build their own ~init.el~ file instead o
   - ~find-file-in-project~: /Project level file navigation./
   - ~highlight-numbers~: /Support for highlighting numbers./
   - ~diff-hl~ /Shows changes in the gutter./
+  - ~hl-prog-mode-extra~: /Highlight common tags in code-comments, e.g: TODO, FIXME, URL's and email addresses./
   - ~inkpot-theme~: /Theme ported from Vim./
   - ~ivy~: /Interactive completion./
   - ~swiper~: /Interactive current-buffer search./
