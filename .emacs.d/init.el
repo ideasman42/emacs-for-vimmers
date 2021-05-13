@@ -392,13 +392,17 @@
 ;; File Formats
 ;; ============
 
-;; Options for generic modes.
-(add-hook 'after-change-major-mode-hook
-  (lambda ()
-    (when (derived-mode-p 'text-mode)
-      (flyspell-mode))
-    (when (derived-mode-p 'prog-mode)
-      (flyspell-prog-mode))))
+;; Options for generic modes. Why?
+;; .. this avoids duplicating checks for all programming and text modes.
+(add-hook
+ 'after-change-major-mode-hook
+ (lambda ()
+   (cond
+    ((derived-mode-p 'prog-mode)
+     (flyspell-prog-mode))
+    ((derived-mode-p 'text-mode)
+     (flyspell-mode)))))
+
 
 ;; ------
 ;; Markup
