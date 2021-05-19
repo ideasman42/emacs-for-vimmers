@@ -515,6 +515,9 @@
 (define-key evil-normal-state-map (kbd "C-a") 'evil-numbers/inc-at-pt)
 (define-key evil-normal-state-map (kbd "C-x") 'evil-numbers/dec-at-pt)
 
+(define-key evil-visual-state-map (kbd "g C-a") 'evil-numbers/inc-at-pt-incremental)
+(define-key evil-visual-state-map (kbd "g C-x") 'evil-numbers/dec-at-pt-incremental)
+
 ;; Auto complete using words from the buffer.
 (define-key evil-insert-state-map (kbd "C-n") 'company-dabbrev)
 ;; Comprehensive auto-complete.
