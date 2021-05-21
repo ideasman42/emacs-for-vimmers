@@ -215,6 +215,11 @@
 ;; .. faster startup for packages which are only activated on certain modes or key bindings.
 (setq use-package-always-defer t)
 
+;; Add the ability to upgrade all packages. Why?
+;; .. adds a quick way to upgrade everything at once.
+(use-package package-utils
+  :commands (package-utils-upgrade-all-and-recompile))
+
 ;; Nice theme from Vim. Why?
 ;; .. personal preference.
 (use-package inkpot-theme

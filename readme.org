@@ -79,6 +79,7 @@ intended to for Vim users who prefer to build their own ~init.el~ file instead o
   - ~hl-prog-mode-extra~: /Highlight common tags in code-comments, e.g: TODO, FIXME, URL's and email addresses./
   - ~inkpot-theme~: /Theme ported from Vim./
   - ~ivy~: /Interactive completion./
+  - ~package-utils~: /Provides functionality to upgrade packages./
   - ~swiper~: /Interactive current-buffer search./
   - ~undo-fu~: /Provides typical undo/redo behavior, without loosing full non-linear undo history./
   - ~which-key~: /Shows available key shortcuts (for leader key)./
