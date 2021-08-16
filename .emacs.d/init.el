@@ -242,13 +242,13 @@
 
   ;; See `undo-fu' package.
   (setq evil-undo-system 'undo-fu)
+  ;; For some reasons evils own search isn't default.
+  (setq evil-search-module 'evil-search)
 
   :config
   ;; Initialize.
   (evil-mode)
 
-  ;; For some reasons evils own search isn't default.
-  (setq evil-search-module 'evil-search)
   (setq evil-ex-search-case 'sensitive))
 
 ;; Use a thin wrapper for undo. Why?
