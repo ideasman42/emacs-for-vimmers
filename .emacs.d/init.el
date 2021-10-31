@@ -363,10 +363,11 @@
 
 ;; Scale all text. Why?
 ;; .. it's useful sometimes to globally zoom in all text.
-(use-package default-text-scale
-  :demand t
-  :init (setq default-text-scale-mode-map (make-sparse-keymap))
-  :config (default-text-scale-mode))
+(use-package default-font-presets
+  :commands (default-font-presets-scale-increase
+             default-font-presets-scale-decrease
+             default-font-presets-scale-reset)
+  :demand t)
 
 ;; ---------------
 ;; Display Options
@@ -491,12 +492,13 @@
 
 ;; Control +/- or mouse-wheel to zoom. Why?
 ;; .. this is a common shortcut for web-browsers that doesn't conflict with anything else.
-(global-set-key (kbd "C-=") 'default-text-scale-increase)
-(global-set-key (kbd "C--") 'default-text-scale-decrease)
-(global-set-key (kbd "C-0") 'default-text-scale-reset)
+(global-set-key (kbd "C-=") 'default-font-presets-scale-increase)
+(global-set-key (kbd "C--") 'default-font-presets-scale-decrease)
+(global-set-key (kbd "C-0") 'default-font-presets-scale-reset)
 
-(global-set-key (kbd "<C-mouse-4>") 'default-text-scale-increase)
-(global-set-key (kbd "<C-mouse-5>") 'default-text-scale-decrease)
+(global-set-key (kbd "<C-mouse-4>") 'default-font-presets-scale-increase)
+(global-set-key (kbd "<C-mouse-5>") 'default-font-presets-scale-decrease)
+
 
 ;; --------------
 ;; Evil Mode Keys
