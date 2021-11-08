@@ -285,7 +285,6 @@
   ;; Always show half the window height. Why?
   ;; .. useful when searching through large lists of content.
   (setq ivy-height-alist `((t . ,(lambda (_caller) (/ (frame-height) 2)))))
-  (setq ivy-display-style 'fancy)
 
   ;; Vim style keys in ivy (holding Control).
   (define-key ivy-minibuffer-map (kbd "C-j") 'next-line)
