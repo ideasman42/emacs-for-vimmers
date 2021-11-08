@@ -25,7 +25,7 @@ intended to for Vim users who prefer to build their own ~init.el~ file instead o
 
   - Minimal: /Avoiding complexity in the configuration where possible./
   - No faffing about: /Packages install on startup./
-  - Documented: /Each entry in needs to justify it's existence./
+  - Documented: /Each entry must justify it's existence./
 
 * Installation
 
