@@ -376,6 +376,10 @@
 ;; Helpful to give context when reading errors & the current line is made more prominent.
 (global-display-line-numbers-mode 1)
 
+;; Even when narrowing, show global line numbers. Why?
+;; .. because these are often referenced in external messages.
+(setq-default display-line-numbers-widen t)
+
 ;; Show the column as well as the line. Why?
 ;; .. some compiler errors show the column which is useful to compare.
 (setq column-number-mode t)
