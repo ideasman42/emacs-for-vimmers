@@ -3,7 +3,7 @@
 #+TITLE: Emacs for Vimmers
 
 This is a minimal, somewhat opinionated Emacs configuration
-intended to for Vim users who prefer to build their own ~init.el~ file instead of more heavy weight solutions.
+intended to for VIM users who prefer to build their own ~init.el~ file instead of more heavy weight solutions.
 
 * Motivation
 
@@ -17,8 +17,8 @@ intended to for Vim users who prefer to build their own ~init.el~ file instead o
 
 * Approach
 
-  Since Vim is quite minimal by default,
-  this aims to provide a setup roughly matching what a developer using Vim might be familiar with.
+  Since VIM is quite minimal by default,
+  this aims to provide a setup roughly matching what a developer using VIM might be familiar with.
 
   While ~evil-mode~ on it's own gives most of Vim's functionality to Emacs,
   there are various additional packages needed for features such as incrementing numbers.
@@ -37,18 +37,18 @@ intended to for Vim users who prefer to build their own ~init.el~ file instead o
 
 * Introduction
 
-  While mostly you can use this as Vim clone, there are differences to be aware of.
+  While mostly you can use this as VIM clone, there are differences to be aware of.
 
   - Pressing ~Alt-X~ (often written as ~M-x~)
     gives you access to many commands.
-  - Pressing ~Ctrl-Z~ toggles Vim emulation
+  - Pressing ~Ctrl-Z~ toggles VIM emulation
     (if you ever want to, or press this by accident).
   - Packages can be upgraded by pressing:
     ~M-x~, then typing ~package-utils-upgrade-all-and-recompile~.
 
 ** Extra Functionality
 
-   Some popular packages have been enabled which don't have standardized ways of access for Vim or Emacs.
+   Some popular packages have been enabled which don't have standardized ways of access for VIM or Emacs.
 
    - ~Ctrl-N~: Simple auto-complete based on words in current buffer).
    - ~Ctrl-Space~: Context sensitive auto-complete (using ~company-complete~).
@@ -70,21 +70,21 @@ intended to for Vim users who prefer to build their own ~init.el~ file instead o
   - ~company~: /Auto-complete./
   - ~counsel~: /Search./
   - ~default-font-presets~: /Scale all text./
-  - ~evil-numbers~: /Additional Vim functionality to increment/decrement numbers./
-  - ~evil-surround~: /Additional Vim functionality./
-  - ~evil~: /Vim functionality./
+  - ~evil-numbers~: /Additional VIM functionality to increment/decrement numbers./
+  - ~evil-surround~: /Additional VIM functionality./
+  - ~evil~: /VIM functionality./
   - ~find-file-in-project~: /Project level file navigation./
   - ~highlight-numbers~: /Support for highlighting numbers./
   - ~diff-hl~ /Shows changes in the gutter./
-  - ~hl-prog-mode-extra~: /Highlight common tags in code-comments, e.g: TODO, FIXME, URL's and email addresses./
-  - ~inkpot-theme~: /Theme ported from Vim./
+  - ~hl-prog-mode-extra~: /Highlight common tags in code-comments, e.g: ~TODO~, ~FIXME~, ~URL's~ and email addresses./
+  - ~inkpot-theme~: /Theme ported from VIM./
   - ~ivy~: /Interactive completion./
   - ~package-utils~: /Provides functionality to upgrade packages./
   - ~swiper~: /Interactive current-buffer search./
   - ~undo-fu~: /Provides typical undo/redo behavior, without loosing full non-linear undo history./
   - ~which-key~: /Shows available key shortcuts (for leader key)./
 
-* What Next
+* What Next?
 
   Functionality not covered here which you might want add yourself.
 
