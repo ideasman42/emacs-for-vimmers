@@ -220,7 +220,7 @@
 (use-package package-utils
   :commands (package-utils-upgrade-all-and-recompile))
 
-;; Nice theme from Vim. Why?
+;; Nice theme from VIM Why?
 ;; .. personal preference.
 (use-package inkpot-theme
   :demand t
@@ -234,8 +234,8 @@
   :init (add-hook 'prog-mode-hook #'hl-prog-extra-mode))
 
 
-;; Main Vim emulation package. Why?
-;; .. without this, you won't have Vim key bindings or modes.
+;; Main VIM emulation package. Why?
+;; .. without this, you won't have VIM key bindings or modes.
 (use-package evil
   :demand t
   :init
@@ -256,11 +256,11 @@
 (use-package undo-fu)
 
 ;; Use evil numbers to increment & decrement. Why?
-;; .. evil-mode doesn't include this Vim functionality.
+;; .. evil-mode doesn't include this VIM functionality.
 (use-package evil-numbers)
 
 ;; Perform actions on surrounding characters. Why?
-;; .. while not part of Vim, it's a useful & common package for developers.
+;; .. while not part of VIM, it's a useful & common package for developers.
 (use-package evil-surround
   :demand t
   :config
@@ -286,7 +286,7 @@
   ;; .. useful when searching through large lists of content.
   (setq ivy-height-alist `((t . ,(lambda (_caller) (/ (frame-height) 2)))))
 
-  ;; Vim style keys in ivy (holding Control).
+  ;; VIM style keys in ivy (holding Control).
   (define-key ivy-minibuffer-map (kbd "C-j") 'next-line)
   (define-key ivy-minibuffer-map (kbd "C-k") 'previous-line)
 
@@ -318,7 +318,7 @@
   (setq company-dabbrev-downcase nil)
   (setq company-dabbrev-ignore-case nil)
 
-  ;; Key-map: hold Control for Vim motion. Why?
+  ;; Key-map: hold Control for VIM motion. Why?
   ;; .. we're already holding Control, allow navigation at the same time.
   (define-key company-active-map (kbd "C-j") 'company-select-next-or-abort)
   (define-key company-active-map (kbd "C-k") 'company-select-previous-or-abort)
@@ -521,7 +521,7 @@
       (mouse-yank-secondary click)
       (delete-overlay mouse-secondary-overlay))))
 
-;; Vim increment/decrement keys.
+;; VIM increment/decrement keys.
 (define-key evil-normal-state-map (kbd "C-a") 'evil-numbers/inc-at-pt)
 (define-key evil-normal-state-map (kbd "C-x") 'evil-numbers/dec-at-pt)
 
