@@ -330,7 +330,7 @@
   (define-key company-search-map (kbd "C-k") 'company-select-previous))
 
 ;; Use `swiper' for interactive buffer search. Why?
-;; .. quickly search the buffer if useful.
+;; .. interactively searching the current buffer can be handy.
 (use-package swiper
   :commands (swiper)
   :config
