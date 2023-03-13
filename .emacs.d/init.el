@@ -502,6 +502,10 @@
 (global-set-key (kbd "<C-mouse-4>") 'default-font-presets-scale-increase)
 (global-set-key (kbd "<C-mouse-5>") 'default-font-presets-scale-decrease)
 
+;; For PGTK (for some reason different names are used).
+(global-set-key (kbd "<C-wheel-up>") 'default-font-presets-scale-increase)
+(global-set-key (kbd "<C-wheel-down>") 'default-font-presets-scale-decrease)
+
 
 ;; --------------
 ;; Evil Mode Keys
