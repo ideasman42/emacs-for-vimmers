@@ -372,6 +372,10 @@
 ;; Display Options
 ;; ===============
 
+;; Show the column limit (fill-column). Why?
+;; .. for software development it's often enforced.
+(global-display-fill-column-indicator-mode 1)
+
 ;; Show line numbers. Why?
 ;; Helpful to give context when reading errors & the current line is made more prominent.
 (global-display-line-numbers-mode 1)
