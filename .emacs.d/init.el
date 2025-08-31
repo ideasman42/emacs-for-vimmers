@@ -12,7 +12,8 @@
 
 ;; Disable startup message. Why?
 ;; .. less noise is better.
-(defun display-startup-echo-area-message () (message ""))
+(defun display-startup-echo-area-message ()
+  (message ""))
 
 ;; Visual bell. Why?
 ;; .. audible beeps are annoying.
@@ -206,7 +207,8 @@
   (package-install 'use-package))
 
 ;; This is only needed once, near the top of the file
-(eval-when-compile (require 'use-package))
+(eval-when-compile
+  (require 'use-package))
 
 ;; Download automatically. Why?
 ;; .. convenience, so on first start all packages are installed.
@@ -279,8 +281,7 @@
 ;; .. makes completing various prompts for input much more friendly & interactive.
 (use-package ivy
   :demand t
-  :config
-  (ivy-mode)
+  :config (ivy-mode)
 
   ;; Always show half the window height. Why?
   ;; .. useful when searching through large lists of content.
@@ -306,8 +307,7 @@
 ;; .. saves typing, allows multiple back-ends based on the current language/mode.
 (use-package company
   :commands (company-complete-common company-dabbrev)
-  :config
-  (global-company-mode)
+  :config (global-company-mode)
 
   ;; Increase maximum number of items to show in auto-completion. Why?
   ;; .. seeing more at once gives you a better overview of your options.
@@ -363,9 +363,9 @@
 ;; Scale all text. Why?
 ;; .. it's useful sometimes to globally zoom in all text.
 (use-package default-font-presets
-  :commands (default-font-presets-scale-increase
-             default-font-presets-scale-decrease
-             default-font-presets-scale-reset)
+  :commands
+  (default-font-presets-scale-increase
+   default-font-presets-scale-decrease default-font-presets-scale-reset)
   :demand t)
 
 ;; ---------------
@@ -421,73 +421,86 @@
 ;; Markup
 ;; ------
 
-(add-hook 'org-mode-hook
-  (lambda ()
-    (setq-local fill-column 120)
-    (setq-local tab-width 2)
-    (setq-local evil-shift-width 2)
-    (setq-local indent-tabs-mode nil)
+(add-hook
+ 'org-mode-hook
+ (lambda ()
+   (setq-local fill-column 120)
+   (setq-local tab-width 2)
+   (setq-local evil-shift-width 2)
+   (setq-local indent-tabs-mode nil)
 
-    (setq-local ffip-patterns '("*.org"))))
+   (setq-local ffip-patterns '("*.org"))))
 
 ;; ---------
 ;; Scripting
 ;; ---------
 
-(add-hook 'emacs-lisp-mode-hook
-  (lambda ()
-    (setq-local fill-column 120)
-    (setq-local tab-width 2)
-    (setq-local evil-shift-width 2)
-    (setq-local indent-tabs-mode nil)
+(add-hook
+ 'emacs-lisp-mode-hook
+ (lambda ()
+   (setq-local fill-column 120)
+   (setq-local tab-width 2)
+   (setq-local evil-shift-width 2)
+   (setq-local indent-tabs-mode nil)
 
-    (setq-local ffip-patterns '("*.el"))
+   (setq-local ffip-patterns '("*.el"))
 
-    ;; Don't delimit on dashes or underscores. Why?
-    ;; .. makes searching for variable names inconvenient.
-    (modify-syntax-entry ?- "w")
-    (modify-syntax-entry ?_ "w")))
+   ;; Don't delimit on dashes or underscores. Why?
+   ;; .. makes searching for variable names inconvenient.
+   (modify-syntax-entry ?- "w")
+   (modify-syntax-entry ?_ "w")))
 
-(add-hook 'python-mode-hook
-  (lambda ()
-    (setq-local fill-column 80)
-    (setq-local tab-width 4)
-    (setq-local evil-shift-width 4)
-    (setq-local indent-tabs-mode nil)
+(add-hook
+ 'python-mode-hook
+ (lambda ()
+   (setq-local fill-column 80)
+   (setq-local tab-width 4)
+   (setq-local evil-shift-width 4)
+   (setq-local indent-tabs-mode nil)
 
-    (setq-local ffip-patterns '("*.py"))))
+   (setq-local ffip-patterns '("*.py"))))
 
 ;; -----
 ;; Shell
 ;; -----
 
-(add-hook 'sh-mode-hook
-  (lambda ()
-    (setq-local fill-column 120)
-    (setq-local tab-width 4)
-    (setq-local evil-shift-width 4)
-    (setq-local indent-tabs-mode nil)
+(add-hook
+ 'sh-mode-hook
+ (lambda ()
+   (setq-local fill-column 120)
+   (setq-local tab-width 4)
+   (setq-local evil-shift-width 4)
+   (setq-local indent-tabs-mode nil)
 
-    (setq-local ffip-patterns '("*.sh"))))
+   (setq-local ffip-patterns '("*.sh"))))
 
 ;; ---------------
 ;; Other Languages
 ;; ---------------
 
-(add-hook 'c-mode-hook
-  (lambda ()
-    (setq-local fill-column 120)
-    (setq-local c-basic-offset 4)
-    (setq-local tab-width 4)
-    (setq-local evil-shift-width 4)
-    (setq-local indent-tabs-mode nil)
+(add-hook
+ 'c-mode-hook
+ (lambda ()
+   (setq-local fill-column 120)
+   (setq-local c-basic-offset 4)
+   (setq-local tab-width 4)
+   (setq-local evil-shift-width 4)
+   (setq-local indent-tabs-mode nil)
 
-    (setq-local ffip-patterns
-      '("*.c" "*.cc" "*.cpp" "*.cxx" "*.h" "*.hh" "*.hpp" "*.hxx" "*.inl"))
+   (setq-local ffip-patterns
+               '("*.c"
+                 "*.cc"
+                 "*.cpp"
+                 "*.cxx"
+                 "*.h"
+                 "*.hh"
+                 "*.hpp"
+                 "*.hxx"
+                 "*.inl"))
 
-    ;; Don't delimit on '_'. Why?
-    ;; .. makes searching for variable names inconvenient.
-    (modify-syntax-entry ?_ "w")))
+   ;; Don't delimit on '_'. Why?
+   ;; .. makes searching for variable names inconvenient.
+   (modify-syntax-entry ?_ "w")))
 
 ;; ----------------------------------------------------------------------------
 ;; Key-map
@@ -522,19 +535,22 @@
 (define-key evil-insert-state-map (kbd "<mouse-1>") 'mouse-start-secondary)
 ;; De-select after copy, Why?
 ;; .. allows quick select-copy-paste.
-(define-key evil-insert-state-map (kbd "<mouse-2>")
-  (lambda (click)
-    (interactive "*p")
-    (when (overlay-start mouse-secondary-overlay)
-      (mouse-yank-secondary click)
-      (delete-overlay mouse-secondary-overlay))))
+(define-key
+ evil-insert-state-map (kbd "<mouse-2>")
+ (lambda (click)
+   (interactive "*p")
+   (when (overlay-start mouse-secondary-overlay)
+     (mouse-yank-secondary click)
+     (delete-overlay mouse-secondary-overlay))))
 
 ;; VIM increment/decrement keys.
 (define-key evil-normal-state-map (kbd "C-a") 'evil-numbers/inc-at-pt)
 (define-key evil-normal-state-map (kbd "C-x") 'evil-numbers/dec-at-pt)
 
-(define-key evil-visual-state-map (kbd "g C-a") 'evil-numbers/inc-at-pt-incremental)
-(define-key evil-visual-state-map (kbd "g C-x") 'evil-numbers/dec-at-pt-incremental)
+(define-key
+ evil-visual-state-map (kbd "g C-a") 'evil-numbers/inc-at-pt-incremental)
+(define-key
+ evil-visual-state-map (kbd "g C-x") 'evil-numbers/dec-at-pt-incremental)
 
 ;; Auto complete using words from the buffer.
 (define-key evil-insert-state-map (kbd "C-n") 'company-dabbrev)
@@ -568,3 +584,9 @@
 
 (setq custom-file (concat user-emacs-directory "custom.el"))
 (load custom-file 'noerror)
+
+;; Local Variables:
+;; indent-tabs-mode: nil
+;; elisp-autofmt-load-packages-local: ("use-package" "use-package-core")
+;; End:
+;;; init.el ends here
